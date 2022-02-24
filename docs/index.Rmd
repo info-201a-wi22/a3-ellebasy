@@ -1,0 +1,21 @@
+---
+title: "Incarceration: Women Populations in Prison"
+author: "Ysabelle Olairez"
+date: "2/23/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r,  include=FALSE, warning = FALSE, echo=FALSE, message=FALSE}
+library(ggplot2)
+library(plotly)
+#library(tidyverse)
+library(dplyr)
+library(maps)
+library(kableExtra)
+source("../source/analysis.R")
+
+```
+
