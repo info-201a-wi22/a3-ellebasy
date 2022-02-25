@@ -11,11 +11,40 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r,  include=FALSE, warning = FALSE, echo=FALSE, message=FALSE}
 library(ggplot2)
 library(plotly)
-#library(tidyverse)
+library(tidyverse)
 library(dplyr)
 library(maps)
-library(kableExtra)
 source("../source/analysis.R")
 
 ```
+
+
+### Intro + Summary Statistics
+For _Assignment 3_, we were asked to look through a large and complex data set containing data about incarceration. This data set contained a diverse set of information about jail and prison populations, admissions, races, genders, etc. This data set comes from _Vera_, the Institute of Justice, and was released in 2015. This data is more focused on the state-level, but combining them all lets us get a bigger picture of the incarceration trends within the United States. After looking through the data set, I decided to focus my project more on women populations in prison. This is because I feel like I really only see incarceration statistics on men or the overall population. The average men prison population for a county is about **460**, while the average women prison population is only about **31**. This is means that the ratio of men to women is almost _**15:1**_. Within women prison populations, I also wanted to examine race and how racism affects this statistic. _As women of color are harshly discriminated against in many aspects of life, I wanted to see how this affects their prison populations._
+
+Within the data set, the year with the highest total of women populations in prison was **2013** with **85,292** women recorded. In this year, white women were the biggest race of women populating prison with a total of **46,418**. Black women were second with a total of **20,365**. While the race of women with the least prison population were appi with a total of only **305**. Showing that the racial breakdown of women in prison vary quite a lot _(there is a 46,113 difference between the white women and aapi women in jail)_. My last summary statistic was to find the state with the highest average women prison population which turned out to be **CA** with an average of **2929** women. Through this assignment I was able to analyze how race plays into women prison populations, mostly focusing on the difference between white and black women.
+
+
+### Time Trend Chart
+```{r pressure, echo=FALSE, warning = FALSE,  message=FALSE}
+ggplotly(time_trend)
+```
+
+Through the time trend chart we are to see how different races of women compare to one another in terms of prison population. Using a line chart best allows us to compare how totals for each race for each year.From the chart we are able to see that black women were the most populated race in prison until 2000 where the white women population grew quite high and their positions switched. While other races like lantinx, native american, and aapi come next in the rankings respectively. This chart made me wonder what events happened that caused the ranking of white women and black women to shift; as well as what caused the decline black women prison populations after 2009. This chart also made me wonder why the native and appi totals were significantly smaller than all the other totals.
+
+
+### Variable Comparison Chart
+```{r echo=FALSE, warning = FALSE,  message=FALSE}
+ggplotly(comparison_chart)
+```
+
+In this chart, we are comparing the averages of white and black women prison populations. Specially in 2013, where the total women prison population was the highest. This is represented in a scatter plot that lets us see how these two continuous values relate to one another. Through the chart we can see that they have a positive correlation with each other because as one value increases so does the other. From the chart we can also see how the average white women prison population is proportionally larger than the average black women prison population.
+
+
+### Map
+```{r echo=FALSE, warning = FALSE,  message=FALSE}
+ggplotly(map_chart)
+```
+
+For the map visual I chose to narrow it down to the black women prison populations in 2009 California. 2009 being the year with the highest total black women prison population and California having the highest women prison population total. From the map we can see the range of their prison populations across the state. The highest value county was Los Angeles which I expected due to it's large population and diversity compared to the other counties. While the lower valued counties have lower numbers due to their population.
 
